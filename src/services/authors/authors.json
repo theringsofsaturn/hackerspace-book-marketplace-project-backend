@@ -1,26 +1,26 @@
 [
   {
-    "name": "Dostojevski",
+    "name": "Fyodor Dostoyevsky",
     "book": "Crime and Punishment",
-    "ASIN": "12345678",
+    "ASIN": "123",
     "_id": "12"
   },
   {
     "name": "Hugo",
-    "book": "Crime and Punishment",
-    "ASIN": "12345678",
+    "book": "Les Misérables",
+    "ASIN": "1234",
     "_id": "123"
   },
   {
-    "name": "Melville",
-    "book": "Crime and Punishment",
-    "ASIN": "12345678",
+    "name": "Herman Melville",
+    "book": "Moby Dick",
+    "ASIN": "12345",
     "_id": "1234"
   },
   {
     "name": "Austen",
-    "book": "Crime and Punishment",
-    "ASIN": "12345678",
+    "book": "Pride and Prejudice",
+    "ASIN": "123456",
     "_id": "12345"
   }
 ]
