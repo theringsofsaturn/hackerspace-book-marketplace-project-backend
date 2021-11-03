@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Dostojevski",
+    "book": "Crime and Punishment",
+    "ASIN": "12345678",
+    "_id": "12"
+  },
+  {
+    "name": "Hugo",
+    "book": "Crime and Punishment",
+    "ASIN": "12345678",
+    "_id": "123"
+  },
+  {
+    "name": "Melville",
+    "book": "Crime and Punishment",
+    "ASIN": "12345678",
+    "_id": "1234"
+  },
+  {
+    "name": "Austen",
+    "book": "Crime and Punishment",
+    "ASIN": "12345678",
+    "_id": "12345"
+  }
+]
