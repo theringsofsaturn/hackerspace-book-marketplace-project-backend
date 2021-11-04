@@ -77,4 +77,40 @@ authorsRouter.post("/", async (req, res, next) => {
   }
 });
 
+// ************* EDIT A SPECIFIC AUTHOR ******************
+authorsRouter.put("/:id", async (req, res, next) => {
+  try {
+    // save request params id in a variable
+    const paramsId = req.params.id;
+    // 1. Read the content of the authors.json file
+    const authors = await readAuthors();
+
+    // find the author with the id requested
+    const author = authors.find((author) => author._id === paramsId);
+
+    if (author) {
+      // 2. Update the author
+      const updatedAuthor = {
+        ...author,
+        ...req.body,
+        updatedAt: new Date(),
+      };
+
+      // 3. Replace the old author with the new one
+      const index = authors.findIndex((author) => author._id === paramsId);
+      authors[index] = updatedAuthor;
+
+      // 4. Write the new list of authors to the authors.json file
+      await writeAuthors(authors);
+
+      // 5. Send back as a response
+      res.status(200).send(updatedAuthor);
+    } else {
+      next(createHttpError(404, `Author with id ${paramsId} not found`));
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 export default authorsRouter;

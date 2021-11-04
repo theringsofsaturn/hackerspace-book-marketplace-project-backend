@@ -1,33 +1,33 @@
 [
   {
-    "name": "Fyodor Dostoyevsky",
-    "book": "Crime and Punishment",
-    "ASIN": "123",
-    "_id": "12"
-  },
-  {
-    "name": "Hugo",
-    "book": "Les Misérables",
-    "ASIN": "1234",
-    "_id": "123"
-  },
-  {
+    "_id": "4n87uskvlf91hw",
     "name": "Herman Melville",
     "book": "Moby Dick",
-    "ASIN": "12345",
-    "_id": "1234"
+    "createdAt": "2021-11-04T20:49:00.116Z"
   },
   {
-    "name": "Austen",
-    "book": "Pride and Prejudice",
-    "ASIN": "123456",
-    "_id": "12345"
+    "_id": "4n87uskvlfa8or",
+    "name": "Fyodor Dostoyevski",
+    "book": "Crime & Punishment",
+    "createdAt": "2021-11-04T20:49:56.091Z"
   },
   {
-    "_id": "123456",
+    "_id": "4n87uskvlfau0r",
     "name": "Lev Tolstoy",
-    "book": "War and Peace",
-    "ASIN": "1234567",
-    "createdAt": "2021-11-04T18:50:58.927Z"
+    "book": "War & Peace",
+    "createdAt": "2021-11-04T20:50:23.739Z"
+  },
+  {
+    "_id": "4n87uskvlfdbhx",
+    "name": "Milan Kundera",
+    "book": "The Unbearable Lightness of Being",
+    "createdAt": "2021-11-04T20:52:19.701Z"
+  },
+  {
+    "_id": "4n87uskvlfeoz3",
+    "name": "Emilian Musil",
+    "book": "The Man Without Qualities",
+    "createdAt": "2021-11-04T20:53:23.823Z",
+    "updatedAt": "2021-11-04T20:54:45.913Z"
   }
 ]
