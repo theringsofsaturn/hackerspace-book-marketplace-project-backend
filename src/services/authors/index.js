@@ -113,4 +113,55 @@ authorsRouter.put("/:id", async (req, res, next) => {
   }
 });
 
+// ************* DELETE A SPECIFIC AUTHOR ******************
+authorsRouter.delete("/:id", async (req, res, next) => {
+  try {
+    // save request params id in a variable
+    const paramsId = req.params.id;
+    // 1. Read the content of the authors.json file
+    const authors = await readAuthors();
+
+    // find the author with the id requested
+    const author = authors.find((author) => author._id === paramsId);
+
+    if (author) {
+      // 2. Delete the author
+      const index = authors.findIndex((author) => author._id === paramsId);
+      authors.splice(index, 1);
+
+      // 3. Write the new list of authors to the authors.json file
+      await writeAuthors(authors);
+
+      // 4. Send back as a response
+      res.status(200).send(author);
+
+      // *********** SECOND METHOD ***********
+      // START
+      // save request params id in a variable
+      // const paramsId = req.params.id;
+      // read the the content of authors.json
+      // const authors = await readAuthors();
+      // find the author with the id requested
+      // const author = authors.find((author) => author.id === paramsId);
+
+      // if (author) {
+      // the remaining authors - all the authors apart the one we want to delete, the one that matches the id
+      // const remainingAuthors = authors.filter(
+      //   (author) => author.id !== paramsId
+      // );
+      // with the function writeAuthord we can save the new updated array of authors in the authors json file where they are stored
+      // await writeAuthors(remainingAuthors);
+
+      // res.send({
+      //   status: 204,
+      //   message: `The author with the id: ${paramsId} was deleted successfully`,
+      //   author: author,
+      // FINISH
+    } else {
+      next(createHttpError(404, `Author with id ${paramsId} not found`));
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
 export default authorsRouter;
