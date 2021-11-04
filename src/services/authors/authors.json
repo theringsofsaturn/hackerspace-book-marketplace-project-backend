@@ -22,5 +22,12 @@
     "book": "Pride and Prejudice",
     "ASIN": "123456",
     "_id": "12345"
+  },
+  {
+    "_id": "123456",
+    "name": "Lev Tolstoy",
+    "book": "War and Peace",
+    "ASIN": "1234567",
+    "createdAt": "2021-11-04T18:50:58.927Z"
   }
 ]

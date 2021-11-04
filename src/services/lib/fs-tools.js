@@ -22,3 +22,6 @@ const authorsJsonPath = join(
 
 // ************************** AUTHORS **********************************************************
 export const readAuthors = () => readJSON(authorsJsonPath);
+export const writeAuthors = authors => writeJSON(authorsJsonPath, authors, {
+  spaces: 2
+});

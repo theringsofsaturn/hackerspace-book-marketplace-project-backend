@@ -9,12 +9,9 @@
 // > DELETE http:localhost:3001/products/123⇒ I want to delete product 123
 
 import express from "express";
-import fs from "fs";
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
 import uniqid from "uniqid";
 import createHttpError from "http-errors";
-import { readAuthors } from "../lib/fs-tools.js";
+import { readAuthors, writeAuthors } from "../lib/fs-tools.js";
 
 const authorsRouter = express.Router();
 
@@ -49,6 +46,32 @@ authorsRouter.get("/:id", async (req, res, next) => {
     } else {
       next(createHttpError(404, `Author with id ${paramsId} not found`));
     }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// ************* CREATE NEW AUTHOR ******************
+authorsRouter.post("/", async (req, res, next) => {
+  try {
+    // 1. Read the content of the authors.json file
+    const authors = await readAuthors();
+
+    // 2. Create a new author
+    const newAuthor = {
+      _id: uniqid(),
+      ...req.body,
+      createdAt: new Date(),
+    };
+
+    // 3. Add the new author to the list of authors
+    authors.push(newAuthor);
+
+    // 4. Write the new list of authors to the authors.json file
+    await writeAuthors(authors);
+
+    // 5. Send back as a response
+    res.status(201).send(newAuthor);
   } catch (error) {
     console.log(error);
   }
